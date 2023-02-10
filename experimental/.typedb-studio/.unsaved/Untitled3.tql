@@ -1,0 +1,7 @@
+permission sub relation,
+    owns review-date,
+    owns validity,
+    relates permitted-access,
+    relates permitted-subject;
+
+
