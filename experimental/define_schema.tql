@@ -1,0 +1,161 @@
+define
+
+credentials sub attribute,
+    value string;
+
+email sub attribute,
+    value string;
+
+name sub attribute,
+    value string;
+
+access sub relation,
+    relates accessed-object,
+    relates valid-action,
+    plays permission:permitted-access;
+
+collection-membership sub relation,
+    relates collection-member,
+    relates resource-collection;
+
+group-membership sub relation,
+    relates group-member,
+    relates user-group;
+
+group-ownership sub relation,
+    relates group-owner,
+    relates owned-group;
+
+object-ownership sub relation,
+    relates object-owner,
+    relates owned-object;
+
+permission sub relation,
+    relates permitted-access,
+    relates permitted-subject;
+
+set-membership sub relation,
+    relates operation-set,
+    relates set-member;
+
+action sub entity,
+    abstract,
+    owns name,
+    plays access:valid-action,
+    plays set-membership:set-member;
+
+operation sub action;
+
+operation-set sub action,
+    plays set-membership:operation-set;
+
+object sub entity,
+    abstract,
+    owns name,
+    plays access:accessed-object,
+    plays collection-membership:collection-member,
+    plays object-ownership:owned-object;
+
+resource sub object;
+
+file sub resource;
+
+resource-collection sub object,
+    plays collection-membership:resource-collection;
+
+directory sub resource-collection;
+
+subject sub entity,
+    abstract,
+    owns credentials,
+    owns name,
+    plays group-membership:group-member,
+    plays group-ownership:group-owner,
+    plays object-ownership:object-owner,
+    plays permission:permitted-subject;
+
+user sub subject;
+
+person sub user,
+    owns email;
+
+user-group sub subject,
+    plays group-membership:user-group,
+    plays group-ownership:owned-group;
+
+business-unit sub user-group;
+
+user-account sub user-group;
+
+user-role sub user-group;
+
+rule transitive-group-membership:
+    when {
+        (user-group: $g1, group-member: $g2) isa group-membership;
+        (user-group: $g2, group-member: $s) isa group-membership;
+    } then {
+        (user-group: $g1, group-member: $s) isa group-membership;
+    };
+
+rule transitive-collection-membership:
+    when {
+        (resource-collection: $c1, collection-member: $c2) isa collection-membership;
+        (resource-collection: $c2, collection-member: $o) isa collection-membership;
+    } then {
+        (resource-collection: $c1, collection-member: $o) isa collection-membership;
+    };
+
+rule transitive-set-membership:
+    when {
+        (operation-set: $s1, set-member: $s2) isa set-membership;
+        (operation-set: $s2, set-member: $a) isa set-membership;
+    } then {
+        (operation-set: $s1, set-member: $a) isa set-membership;
+    };
+
+rule transitive-object-access:
+    when {
+        (resource-collection: $c1, collection-member: $c2) isa collection-membership;
+        $c1 isa! $c1-type;
+        $c2 isa! $c2-type;
+        $c1-type is $c2-type;
+        (accessed-object: $c1, valid-action: $a) isa access;
+    } then {
+        (accessed-object: $c2, valid-action: $a) isa access;
+    };
+
+rule transitive-action-access:
+    when {
+        (operation-set: $s, set-member: $a) isa set-membership;
+        (accessed-object: $o, valid-action: $s) isa access;
+    } then {
+        (accessed-object: $o, valid-action: $a) isa access;
+    };
+
+rule transitive-subject-permission:
+    when {
+        (user-group: $g, group-member: $s) isa group-membership;
+        (permitted-subject: $g, permitted-access: $a) isa permission;
+    } then {
+        (permitted-subject: $s, permitted-access: $a) isa permission;
+    };
+
+rule transitive-object-permission:
+    when {
+        (resource-collection: $c, collection-member: $o) isa collection-membership;
+        $ac-c(accessed-object: $c, valid-action: $a) isa access;
+        $ac-o(accessed-object: $o, valid-action: $a) isa access;
+        (permitted-subject: $s, permitted-access: $ac-c) isa permission;
+    } then {
+        (permitted-subject: $s, permitted-access: $ac-o) isa permission;
+    };
+
+rule transitive-action-permission:
+    when {
+        (operation-set: $s, set-member: $a) isa set-membership;
+        $ac-s(accessed-object: $o, valid-action: $s) isa access;
+        $ac-a(accessed-object: $o, valid-action: $a) isa access;
+        (permitted-subject: $su, permitted-access: $ac-s) isa permission;
+    } then {
+        (permitted-subject: $su, permitted-access: $ac-a) isa permission;
+    };

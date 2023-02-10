@@ -1,0 +1,7 @@
+insert $p isa person, has name "Douglas Schmidt", has email "douglas.schmidt@vaticle.com";  # Few access with groups
+insert $p isa person, has name "Genevieve Gallegos", has email "genevieve.gallegos@vaticle.com";  # Few access
+insert $p isa person, has name "Masako Holley", has email "masako.holley@vaticle.com";  # No access
+insert $p isa person, has name "Pearle Goodman", has email "pearle.goodman@vaticle.com";  # Sales manager
+insert $p isa person, has name "Russell Mills", has email "russell.mills@vaticle.com";  # Full access
+insert $p isa person, has name "Kevin Morrison", has email "kevin.morrison@vaticle.com";  # A lot of access
+
