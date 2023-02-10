@@ -1,0 +1,9 @@
+insert $g isa business-unit, has name "engineering";
+insert $g isa business-unit, has name "core";
+insert $g isa business-unit, has name "product";
+insert $g isa user-role, has name "developer";
+insert $g isa user-role, has name "docs_editor";
+insert $g isa user-role, has name "sys_admin";
+insert $g isa user-role, has name "manager";
+insert $g isa user-account, has name "webinars@vaticle.com";
+insert $g isa user-account, has name "sales@vaticle.com";

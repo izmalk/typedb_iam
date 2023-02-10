@@ -1,3 +1,5 @@
 /logs/
 /data/
 .idea/
+experimental/.DS_Store
+.idea/vcs.xml

@@ -1,0 +1,96 @@
+insert $p isa person, has name "Douglas Schmidt", has email "douglas.schmidt@vaticle.com";
+insert $p isa person, has name "Genevieve Gallegos", has email "genevieve.gallegos@vaticle.com";
+insert $p isa person, has name "Masako Holley", has email "masako.holley@vaticle.com";
+insert $p isa person, has name "Pearle Goodman", has email "pearle.goodman@vaticle.com";
+insert $p isa person, has name "Russell Mills", has email "russell.mills@vaticle.com";
+2023-01-29 21:14:39.428034 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:39.430663 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:39.431640 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:39.432939 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:39.433893 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:39.434686 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:39.435484 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:39.436269 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:39.437036 INFO: Loading 24 user groups:
+2023-01-29 21:14:39.569819 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:39.571384 INFO: Loading 28 group memberships:
+2023-01-29 21:14:39.781833 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:39.783498 INFO: Loading 24 group ownerships:
+2023-01-29 21:14:39.950827 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:39.953377 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:39.954245 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:39.955384 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:39.956347 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:39.957161 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:39.957970 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:39.958874 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:39.959643 INFO: Loading 10 resources:
+2023-01-29 21:14:40.013176 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:40.015077 INFO: Loading 10 resource ownerships:
+2023-01-29 21:14:40.080561 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:40.082805 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:40.083712 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:40.084958 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:40.085882 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:40.086683 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:40.087490 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:40.088289 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:40.089135 INFO: Loading 78 resource collections:
+2023-01-29 21:14:40.473272 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:40.475769 INFO: Loading 89 collection memberships:
+2023-01-29 21:14:40.978471 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:40.980349 INFO: Loading 78 collection ownerships:
+2023-01-29 21:14:41.416635 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:41.418685 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:41.419557 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:41.420875 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:41.421813 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:41.422658 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:41.423544 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:41.424380 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:41.425234 INFO: Loading 10 operations:
+2023-01-29 21:14:41.471101 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:41.474406 INFO: Loading up to 880 potential accesses:
+2023-01-29 21:14:46.180288 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:05   Remaining: 00:00:00 
+2023-01-29 21:14:46.182191 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:46.182921 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:46.184180 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:46.184959 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:46.185641 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:46.186324 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:46.187000 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:46.187621 INFO: Loading 8 operation sets:
+2023-01-29 21:14:46.221361 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:46.222574 INFO: Loading 19 set memberships:
+2023-01-29 21:14:46.324918 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:00   Remaining: 00:00:00
+2023-01-29 21:14:46.327956 INFO: Loading up to 704 potential accesses:
+2023-01-29 21:14:49.369369 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:03   Remaining: 00:00:00 
+2023-01-29 21:14:49.371622 DEBUG: resource_collection data loaded from data/auto_2/resource_collection.json
+2023-01-29 21:14:49.372566 DEBUG: operation_set data loaded from data/auto_2/operation_set.json
+2023-01-29 21:14:49.373988 DEBUG: permission data loaded from data/auto_2/permission.json
+2023-01-29 21:14:49.374959 DEBUG: user_group data loaded from data/auto_2/user_group.json
+2023-01-29 21:14:49.375903 DEBUG: user data loaded from data/auto_2/user.json
+2023-01-29 21:14:49.376802 DEBUG: resource data loaded from data/auto_2/resource.json
+2023-01-29 21:14:49.377647 DEBUG: operation data loaded from data/auto_2/operation.json
+2023-01-29 21:14:49.380452 INFO: Loading 112 permissions:
+2023-01-29 21:14:50.136033 INFO: Progress: |██████████████████████████████████████████████████| 100%   Elapsed: 00:00:01   Remaining: 00:00:00 
+2023-01-29 21:14:50.137492 INFO: Data loaded for database: typedb_iam
+2023-01-29 21:14:50.140374 DEBUG: Rule inference set to true.
+2023-01-29 21:14:50.142528 DEBUG: Getting saved query from: queries/get_kevin_memberships.tql
+2023-01-29 21:14:50.144295 DEBUG: Getting saved query from: queries/get_kevin_ownerships.tql
+2023-01-29 21:14:50.145871 DEBUG: Getting saved query from: queries/get_kevin_permissions.tql
+2023-01-29 21:14:50.147164 DEBUG: Getting saved query from: queries/get_order_memberships.tql
+2023-01-29 21:14:50.148487 DEBUG: Getting saved query from: queries/get_order_owner.tql
+2023-01-29 21:14:50.149900 DEBUG: Getting saved query from: queries/get_order_permissions.tql
+2023-01-29 21:14:50.150798 INFO: Running test query: match $p isa person, has name $p-name; $g isa user-group, has name $g-name; $gm(user-group: $g, group-member: $p) isa group-membership; $p-name = "Kevin Morrison"; get $g-name;
+2023-01-29 21:14:50.171548 INFO: Returned 0 results.
+2023-01-29 21:14:50.172504 INFO: Running test query: match $p isa person, has name $p-name; $o isa object, has name $o-name; $oo(owned-object: $o, object-owner: $p) isa object-ownership; $p-name = "Kevin Morrison"; get $o-name;
+2023-01-29 21:14:50.190619 INFO: Returned 0 results.
+2023-01-29 21:14:50.192007 INFO: Running test query: match $p isa person, has name $p-name; $o isa object, has name $o-name; $a isa action, has name $a-name; $ac(accessed-object: $o, valid-action: $a) isa access; $pe(permitted-subject: $p, permitted-access: $ac) isa permission; $p-name = "Kevin Morrison"; get $o-name, $a-name; limit 10;
+2023-01-29 21:14:50.277025 INFO: Returned 0 results.
+2023-01-29 21:14:50.278252 INFO: Running test query: match $f isa file, has name $f-name; $c isa resource-collection, has name $c-name; $cm(resource-collection: $c, collection-member: $f) isa collection-membership; $f-name = "order_2021-09-01.xlsx"; get $c-name;
+2023-01-29 21:14:50.337979 INFO: Returned 0 results.
+2023-01-29 21:14:50.338917 INFO: Running test query: match $f isa file, has name $f-name; $s isa subject, has name $s-name; $oo(owned-object: $f, object-owner: $s) isa object-ownership; $f-name = "order_2021-09-01.xlsx"; get $s-name;
+2023-01-29 21:14:50.376939 INFO: Returned 0 results.
+2023-01-29 21:14:50.378161 INFO: Running test query: match $f isa file, has name $f-name; $s isa subject, has name $s-name; $a isa action, has name $a-name; $ac(accessed-object: $f, valid-action: $a) isa access; $pe(permitted-subject: $s, permitted-access: $ac) isa permission; $f-name = "order_2021-09-01.xlsx"; get $s-name, $a-name; limit 10;
+2023-01-29 21:14:50.482326 INFO: Returned 0 results.
