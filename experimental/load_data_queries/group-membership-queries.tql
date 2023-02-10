@@ -1,0 +1,17 @@
+match $g isa user-group, has name "engineering"; $s isa subject, has name "core"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "engineering"; $s isa subject, has name "product"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "core"; $s isa subject, has name "Russell Mills"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "core"; $s isa subject, has name "Kevin Morrison"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "core"; $s isa subject, has name "Douglas Schmidt"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "product"; $s isa subject, has name "Douglas Schmidt"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "developer"; $s isa subject, has name "docs_editor"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "developer"; $s isa subject, has name "sys_admin"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "sys_admin"; $s isa subject, has name "Russell Mills"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "manager"; $s isa subject, has name "Pearle Goodman"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "sales@vaticle.com"; $s isa subject, has name "Pearle Goodman"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+

@@ -1,0 +1,404 @@
+insert $p isa person, has name "Douglas Schmidt", has email "douglas.schmidt@vaticle.com";  # Few access with groups
+insert $p isa person, has name "Genevieve Gallegos", has email "genevieve.gallegos@vaticle.com";  # Few access
+insert $p isa person, has name "Masako Holley", has email "masako.holley@vaticle.com";  # No access
+insert $p isa person, has name "Pearle Goodman", has email "pearle.goodman@vaticle.com";  # Sales manager
+insert $p isa person, has name "Russell Mills", has email "russell.mills@vaticle.com";  # Full access
+insert $p isa person, has name "Kevin Morrison", has email "kevin.morrison@vaticle.com";  # A lot of access
+
+
+insert $f isa file, has filepath "iopvu.java";
+insert $f isa file, has filepath "zlckt.ts";
+insert $f isa file, has filepath "psukg.java";
+insert $f isa file, has filepath "axidw.java";
+insert $f isa file, has filepath "lzfkn.java";
+insert $f isa file, has filepath "budget_2022-05-01.xlsx";
+insert $f isa file, has filepath "zewhb.java";
+insert $f isa file, has filepath "budget_2021-08-01.xlsx";
+insert $f isa file, has filepath "LICENSE";
+insert $f isa file, has filepath "README.md";
+
+insert $o isa operation, has name "grant_ownership";
+insert $o isa operation, has name "revoke_ownership";
+insert $o isa operation, has name "grant_permission";
+insert $o isa operation, has name "revoke_permission";
+insert $o isa operation, has name "create_subdirectory";
+insert $o isa operation, has name "delete_subdirectory";
+insert $o isa operation, has name "create_file";
+insert $o isa operation, has name "modify_file";
+insert $o isa operation, has name "delete_file";
+insert $o isa operation, has name "view_file";
+
+insert $s isa operation-set, has name "manage_ownership";
+insert $s isa operation-set, has name "manage_permissions";
+insert $s isa operation-set, has name "perform_all_actions";
+insert $s isa operation-set, has name "perform_admin_actions";
+insert $s isa operation-set, has name "manage_subdirectories";
+insert $s isa operation-set, has name "perform_writes";
+insert $s isa operation-set, has name "perform_writes";
+insert $s isa operation-set, has name "perform_reads";
+
+# Operation set membership
+match $s isa operation-set, has name "manage_ownership"; $a isa action, has name "grant_ownership"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_ownership"; $a isa action, has name "revoke_ownership"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_ownership"; $a isa action, has name "manage_permissions"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_permissions"; $a isa action, has name "grant_permission"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_permissions"; $a isa action, has name "revoke_permission"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_all_actions"; $a isa action, has name "manage_subdirectories"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_all_actions"; $a isa action, has name "perform_writes"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_admin_actions"; $a isa action, has name "manage_subdirectories"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_admin_actions"; $a isa action, has name "perform_writes"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_subdirectories"; $a isa action, has name "create_subdirectory"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "manage_subdirectories"; $a isa action, has name "delete_subdirectory"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "create_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "modify_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "delete_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "perform_reads"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "modify_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "delete_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_writes"; $a isa action, has name "perform_reads"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+match $s isa operation-set, has name "perform_reads"; $a isa action, has name "view_file"; insert$m (operation-set: $s, set-member: $a) isa set-membership;
+
+#User-groups
+insert $g isa business-unit, has name "engineering";
+insert $g isa business-unit, has name "core";
+insert $g isa business-unit, has name "product";
+insert $g isa user-role, has name "developer";
+insert $g isa user-role, has name "docs_editor";
+insert $g isa user-role, has name "sys_admin";
+insert $g isa user-role, has name "manager";
+insert $g isa user-account, has email "webinars@vaticle.com";
+insert $g isa user-account, has email "sales@vaticle.com";
+
+#User-group membership
+match $g isa user-group, has name "engineering"; $s isa subject, has name "core"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "engineering"; $s isa subject, has name "product"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "core"; $s isa subject, has name "Russell Mills"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "core"; $s isa subject, has name "Kevin Morrison"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "core"; $s isa subject, has name "Douglas Schmidt"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "product"; $s isa subject, has name "Douglas Schmidt"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "developer"; $s isa subject, has name "docs_editor"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+match $g isa user-group, has name "developer"; $s isa subject, has name "sys_admin"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "sys_admin"; $s isa subject, has name "Russell Mills"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "manager"; $s isa subject, has name "Pearle Goodman"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+match $g isa user-group, has name "sales@vaticle.com"; $s isa subject, has name "Pearle Goodman"; insert $m (user-group: $g, group-member: $s) isa group-membership;
+
+#Collections
+insert $d isa directory, has filepath "engineering";
+insert $d isa directory, has filepath "engineering/core";
+insert $d isa directory, has filepath "engineering/core/src";
+insert $d isa directory, has filepath "engineering/core/src/common";
+insert $d isa directory, has filepath "product";
+insert $d isa directory, has filepath "operations";
+insert $d isa directory, has filepath "operations/finances";
+
+#Collection membership
+
+match $c isa resource-collection, has name "engineering"; $o isa object, has filepath "engineering/core"; insert $m (resource-collection: $c, collection-member: $o) isa collection-membership;
+match $c isa resource-collection, has name "engineering/core"; $o isa object, has filepath "engineering/core/src"; insert $m (resource-collection: $c, collection-member: $o) isa collection-membership;
+match $c isa resource-collection, has name "engineering/core/src"; $o isa object, has filepath "engineering/core/src/common"; insert $m (resource-collection: $c, collection-member: $o) isa collection-membership;
+match $c isa resource-collection, has name "operations"; $o isa object, has filepath "operations/finances"; insert $m (resource-collection: $c, collection-member: $o) isa collection-membership;
+
+#Collection ownership
+match $c isa resource-collection, has name "engineering"; $s isa subject, has name "sys_admin"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "engineering/core"; $s isa subject, has name "Kevin Morrison"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "engineering/core/src"; $s isa subject, has name "Kevin Morrison"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "engineering/core/src/common"; $s isa subject, has name "Kevin Morrison"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "product"; $s isa subject, has name "manager"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "operations"; $s isa subject, has name "Pearle Goodman"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+match $c isa resource-collection, has name "operations/finances"; $s isa subject, has name "Pearle Goodman"; insert $o (owned-object: $c, object-owner: $s) isa object-ownership;
+
+#Resource ownership
+match $r isa resource, has name "iopvu.java"; $s isa subject, has name "core"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "zlckt.ts"; $s isa subject, has name "Genevieve Gallegos"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "psukg.java"; $s isa subject, has name "core"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "axidw.java"; $s isa subject, has name "core"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "lzfkn.java"; $s isa subject, has name "core"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "budget_2022-05-01.xlsx"; $s isa subject, has name "operations"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "zewhb.java"; $s isa subject, has name "Russell Mills"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "budget_2021-08-01.xlsx"; $s isa subject, has name "operations"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "LICENSE"; $s isa subject, has name "developer"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+match $r isa resource, has name "README.md"; $s isa subject, has name "developer"; insert $o (owned-object: $r, object-owner: $s) isa object-ownership;
+
+#Potential access types
+match $ob isa object, has filepath "iopvu.java"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zlckt.ts"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "psukg.java"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "axidw.java"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "lzfkn.java"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zewhb.java"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "LICENSE"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "README.md"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src/common"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "product"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations/finances"; $op isa operation, has name "grant_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "iopvu.java"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zlckt.ts"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "psukg.java"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "axidw.java"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "lzfkn.java"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zewhb.java"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "LICENSE"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "README.md"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src/common"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "product"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations/finances"; $op isa operation, has name "revoke_ownership"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "iopvu.java"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zlckt.ts"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "psukg.java"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "axidw.java"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "lzfkn.java"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zewhb.java"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "LICENSE"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "README.md"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src/common"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "product"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations/finances"; $op isa operation, has name "grant_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "iopvu.java"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zlckt.ts"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "psukg.java"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "axidw.java"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "lzfkn.java"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "zewhb.java"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "LICENSE"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "README.md"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "engineering/core/src/common"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "product"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa object, has filepath "operations/finances"; $op isa operation, has name "revoke_permission"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "create_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "delete_subdirectory"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "create_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "iopvu.java"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zlckt.ts"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "psukg.java"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "axidw.java"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "lzfkn.java"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zewhb.java"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "LICENSE"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "README.md"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "modify_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "iopvu.java"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zlckt.ts"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "psukg.java"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "axidw.java"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "lzfkn.java"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zewhb.java"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "LICENSE"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "README.md"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "delete_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "iopvu.java"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zlckt.ts"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "psukg.java"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "axidw.java"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "lzfkn.java"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2022-05-01.xlsx"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "zewhb.java"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "budget_2021-08-01.xlsx"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "LICENSE"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa file, has filepath "README.md"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "engineering/core/src/common"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "product"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+match $ob isa directory, has filepath "operations/finances"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
+
+#Potential sets accesses
+match $o isa object, has filepath "iopvu.java"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "zlckt.ts"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "psukg.java"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "axidw.java"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "lzfkn.java"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "budget_2022-05-01.xlsx"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "zewhb.java"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "budget_2021-08-01.xlsx"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "LICENSE"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "README.md"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core/src"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core/src/common"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "product"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "operations"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "operations/finances"; $s isa operation-set, has name "manage_ownership"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "iopvu.java"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "zlckt.ts"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "psukg.java"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "axidw.java"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "lzfkn.java"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "budget_2022-05-01.xlsx"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "zewhb.java"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "budget_2021-08-01.xlsx"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "LICENSE"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "README.md"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core/src"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "engineering/core/src/common"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "product"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "operations"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa object, has filepath "operations/finances"; $s isa operation-set, has name "manage_permissions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src/common"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "product"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations/finances"; $s isa operation-set, has name "perform_all_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src/common"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "product"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations/finances"; $s isa operation-set, has name "perform_admin_actions"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src/common"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "product"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations/finances"; $s isa operation-set, has name "manage_subdirectories"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src/common"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "product"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations/finances"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "iopvu.java"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "zlckt.ts"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "psukg.java"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "axidw.java"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "lzfkn.java"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "budget_2022-05-01.xlsx"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "zewhb.java"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "budget_2021-08-01.xlsx"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "LICENSE"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "README.md"; $s isa operation-set, has name "perform_writes"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "iopvu.java"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "zlckt.ts"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "psukg.java"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "axidw.java"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "lzfkn.java"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "budget_2022-05-01.xlsx"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "zewhb.java"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "budget_2021-08-01.xlsx"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "LICENSE"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa file, has filepath "README.md"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "engineering/core/src/common"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "product"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+match $o isa directory, has filepath "operations/finances"; $s isa operation-set, has name "perform_reads"; insert $a (accessed-object: $o, valid-action: $s) isa access;
+
+#Permissions
+match $s isa user-role, has name "sys_admin"; $o isa directory, has filepath "engineering";
+      $a isa action, has name "perform_all_actions"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa business-unit, has name "core"; $o isa directory, has filepath "engineering/core";
+      $a isa action, has name "manage_subdirectories"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa business-unit, has name "core"; $o isa directory, has filepath "engineering/core";
+      $a isa action, has name "perform_writes"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa user-role, has name "manager"; $o isa directory, has filepath "product";
+      $a isa action, has name "perform_all_actions"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa user-role, has name "manager"; $o isa directory, has filepath "operations";
+      $a isa action, has name "perform_all_actions"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa user-role, has name "manager"; $o isa directory, has filepath "operations/finances";
+      $a isa action, has name "perform_all_actions"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa subject, has name "Kevin Morrison"; $o isa object, has filepath "engineering/core"; 
+      $a isa action, has name "manage_ownership"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa subject, has name "Russell Mills"; $o isa object; 
+      $a isa action, has name "perform_reads"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa subject, has name "Russell Mills"; $o isa object, has filepath "engineering/core"; 
+      $a isa action, has name "manage_ownership"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa subject, has name "Russell Mills"; $o isa object, has filepath "product"; 
+      $a isa action, has name "manage_ownership"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+
+match $s isa subject, has name "Russell Mills"; $o isa object, has filepath "operations"; 
+      $a isa action, has name "manage_ownership"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
+

@@ -1,0 +1,2 @@
+match $u isa user, has name $n;
+get $n;
