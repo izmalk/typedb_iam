@@ -43,8 +43,8 @@ match $ob isa file, has filepath "LICENSE"; $op isa operation, has name "view_fi
 match $ob isa file, has filepath "README.md"; $op isa operation, has name "view_file"; insert $a (accessed-object: $ob, valid-action: $op) isa access;
 
 # Permissions
-match $s isa subject, has name "Kevin Morrison"; $o isa object, has filepath "iopvu.java"; 
-      $a isa action, has name "modify_file"; $ac (accessed-object: $o, valid-action: $a) isa access; 
+match $s isa subject, has name "Kevin Morrison"; $o isa object, has filepath "iopvu.java";
+      $a isa action, has name "modify_file"; $ac (accessed-object: $o, valid-action: $a) isa access;
 insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
 
 match $s isa subject, has name "Kevin Morrison"; $o isa object, has filepath "zlckt.ts"; 
@@ -102,7 +102,4 @@ insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
 match $s isa subject, has name "Pearle Goodman"; $o isa object, has filepath "README.md"; 
       $a isa action, has name "modify_file"; $ac (accessed-object: $o, valid-action: $a) isa access; 
 insert $p (permitted-subject: $s, permitted-access: $ac) isa permission;
-
-
-
 
