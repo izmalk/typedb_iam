@@ -1,7 +1,0 @@
-access sub relation,
-    relates accessed-object,
-    relates valid-action,
-    plays change-request:requested-change,
-    plays permission:permitted-access;
-
-
