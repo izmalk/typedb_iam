@@ -1,0 +1,8 @@
+match
+  $pe ($x, $y) isa permission;
+  $x isa person, has name $x-n;
+  $y (accessed-object: $o, valid-action: $act) isa access;
+  $act has name $act-n;
+  $o has filepath $o-fp;
+get $x-n, $act-n, $o-fp; group $o-fp;
+count;

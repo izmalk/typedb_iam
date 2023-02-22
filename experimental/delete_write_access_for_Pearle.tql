@@ -1,0 +1,6 @@
+match
+      $p has name "Pearle Goodman";
+      $a isa action, has name "modify_file";
+      $ac (accessed-object: $o, valid-action: $a) isa access; 
+      $pe (permitted-subject: $p, permitted-access: $ac) isa permission;
+delete $pe isa permission;

@@ -1,0 +1,2 @@
+match $p isa person, has name "Masako Holley"; 
+insert $p has email "masako2.holley@vaticle.com";

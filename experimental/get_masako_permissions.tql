@@ -1,0 +1,3 @@
+match
+  $p isa person, has name "Masako Holley";
+  $pe (permitted-subject: $p, permitted-access: $a) isa permission;

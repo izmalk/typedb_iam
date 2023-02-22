@@ -1,0 +1,4 @@
+match $u isa user, has name 'Kevin Morrison';
+$x isa thing;
+{$u has $x;} or {($u,$x) isa relation;};
+get $x;
