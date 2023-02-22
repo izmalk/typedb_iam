@@ -1,0 +1,1 @@
+insert $f isa file, has filepath "logs/2023.log";

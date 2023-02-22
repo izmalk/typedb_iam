@@ -1,0 +1,4 @@
+match
+  $rec isa record, has number $num;
+get $num; max $num;
+
