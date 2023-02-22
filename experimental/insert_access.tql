@@ -1,0 +1,3 @@
+match $f isa file, has filepath "logs/2023.log";
+$vav isa action, has name "view_file";
+insert ($vav, $f) isa access;

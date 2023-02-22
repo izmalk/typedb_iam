@@ -1,0 +1,4 @@
+match
+  $p isa person, has name "Masako Holley";
+  $pe (permitted-subject: $s, permitted-access: $a) isa permission;
+delete $pe (permitted-access: $a);
