@@ -1,0 +1,11 @@
+match
+  $rec isa record, has number $num;
+get $num; 
+mean $num;
+#median $numl;
+#count $num;
+#min $num;
+#max $num;
+#sum $num;
+
+

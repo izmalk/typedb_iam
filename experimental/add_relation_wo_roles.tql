@@ -1,0 +1,4 @@
+define 
+
+test-relation sub relation,
+owns name;

@@ -1,1 +1,1 @@
-match $1 sub thing;
+match $t sub thing; get $t;

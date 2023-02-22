@@ -1,0 +1,1 @@
+match $p isa person, has name "Masako Holley", has email $email; get $email;
