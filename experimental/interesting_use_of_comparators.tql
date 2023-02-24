@@ -1,0 +1,12 @@
+match
+  $p has full-name "Kevin Morrison";
+  $a_read isa action, has action-name "view_file";
+  $o isa object, has $path; $path "README.md";
+  $ac_read (accessed-object: $o, valid-action: $a_read) isa access; 
+  $pe (permitted-subject: $p, permitted-access: $ac_read) isa permission;
+  $new isa full-name;
+  $path = $new;
+insert
+  $p has full-name $new;
+
+#this shouldn't work because match will not find a proper $new that is already exist in the database

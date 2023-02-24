@@ -1,10 +1,10 @@
 match
-$p1 isa person, has name $pn1;
-$p2 isa person, has name $pn2;
+$p1 isa person, has full-name $pn1;
+$p2 isa person, has full-name $pn2;
 $ac isa action;
-$f isa file, has filepath "README.md";
-{$ac has name "modify_file";} or {$ac has name "view_file";};
-not {$p1 has name "Masako Holley";};
+$f isa file, has path "README.md";
+{$ac has action-name "modify_file";} or {$ac has action-name "view_file";};
+not {$p1 has full-name "Masako Holley";};
 $a($f, $ac) isa access;
 $pe1($p1, $a) isa permission;
 $pe2($p2, $a) isa permission;

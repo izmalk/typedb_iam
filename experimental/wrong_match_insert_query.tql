@@ -1,0 +1,7 @@
+match
+  $p has full-name "Kevin Morrison"; # This exists
+  $new isa full-name; # This looks for all instances of the full-name type
+  $new "README.md"; # This filters to the only instance with the value of "README.md" which doesn't exist yet
+insert
+  $p has full-name $new; # This doesn't insert anything because there is no such $new
+

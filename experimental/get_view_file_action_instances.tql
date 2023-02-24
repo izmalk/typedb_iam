@@ -1,3 +1,0 @@
-match 
-$vav isa action, has name "view_file";
-

@@ -1,0 +1,7 @@
+define
+
+symlink sub attribute, value string;
+
+filepath sub attribute, value string,
+   owns symlink;
+

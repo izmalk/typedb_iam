@@ -1,2 +1,2 @@
-match $u isa user, has name $n;
+match $u isa user, has full-name $n;
 get $n;
