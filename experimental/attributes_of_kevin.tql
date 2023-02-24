@@ -1,0 +1,3 @@
+match $p isa person, has full-name "Kevin Morrison";
+$p has $a;
+get $a;

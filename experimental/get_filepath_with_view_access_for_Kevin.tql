@@ -1,6 +1,6 @@
-match $u isa user, has name 'Kevin Morrison';
+match $u isa user, has full-name 'Kevin Morrison';
 $p($u, $pa) isa permission;
-$o isa object, has filepath $fp;
+$o isa object, has path $fp;
 $pa($o, $va) isa access;
-$va isa action, has name "view_file";
+$va isa action, has action-name "view_file";
 get $fp;

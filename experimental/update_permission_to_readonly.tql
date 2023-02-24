@@ -1,7 +1,7 @@
 match
-  $p has name "Pearle Goodman";
-  $a_write isa action, has name "modify_file";
-  $a_read isa action, has name "view_file";
+  $p has full-name "Pearle Goodman";
+  $a_write isa action, has action-name "modify_file";
+  $a_read isa action, has action-name "view_file";
   $ac_write (accessed-object: $o, valid-action: $a_write) isa access; 
   $ac_read (accessed-object: $o, valid-action: $a_read) isa access; 
   $pe (permitted-subject: $p, permitted-access: $ac_write) isa permission;

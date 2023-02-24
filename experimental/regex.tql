@@ -1,1 +1,1 @@
-match $o isa object, has filepath $fp; $fp like "(logs/.*)"; delete $o has $fp;
+match $o isa object, has path $fp; $fp like "(logs/.*)"; delete $o has $fp;

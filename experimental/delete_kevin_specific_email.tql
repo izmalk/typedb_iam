@@ -1,1 +1,1 @@
-match $u isa user, has name "Kevin Morrison", has email $email; $email "k.morrison@vaticle.com"; delete $email isa email;
+match $u isa user, has full-name "Kevin Morrison", has email $email; $email "k.morrison@vaticle.com"; delete $email isa email;

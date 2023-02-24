@@ -5,3 +5,4 @@ match
     $ac(accessed-object: $o, valid-action: $a) isa access;
     $pe(permitted-subject: $p, permitted-access: $ac) isa permission;
     $p-name = "Kevin Morrison";
+    get $o-path, $a-name; group $a-name;
