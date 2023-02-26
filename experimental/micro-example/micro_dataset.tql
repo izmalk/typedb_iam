@@ -4,14 +4,14 @@ insert $p isa person, has full-name "Pearle Goodman", has email "pearle.goodman@
 insert $p isa person, has full-name "Kevin Morrison", has email "kevin.morrison@vaticle.com";  # Full access
 
 # Objects
-insert $f isa file, has path "iopvu.java";
-insert $f isa file, has path "zlckt.ts";
-insert $f isa file, has path "psukg.java";
-insert $f isa file, has path "axidw.java";
-insert $f isa file, has path "lzfkn.java";
-insert $f isa file, has path "budget_2022-05-01.xlsx";
+insert $f isa file, has path "iopvu.java", has size-kb 55;
+insert $f isa file, has path "zlckt.ts", has size-kb 143;
+insert $f isa file, has path "psukg.java", has size-kb 171;
+insert $f isa file, has path "axidw.java", has size-kb 212;
+insert $f isa file, has path "lzfkn.java", has size-kb 70;
+insert $f isa file, has path "budget_2022-05-01.xlsx", has size-kb 758;
 insert $f isa file, has path "zewhb.java";
-insert $f isa file, has path "budget_2021-08-01.xlsx";
+insert $f isa file, has path "budget_2021-08-01.xlsx", has size-kb 1705;
 insert $f isa file, has path "LICENSE";
 insert $f isa file, has path "README.md";
 
