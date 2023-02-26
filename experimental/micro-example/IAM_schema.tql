@@ -28,11 +28,20 @@ company-membership sub relation,
 parent-company sub attribute,
     value string;
 
+#rule attribute-parent-company:
+#    when {
+#        (parent-company: $c, company-member: $t) isa company-membership;
+#        $c has name $c-name;
+#        ?name-value = $c-name
+#    } then {
+#        $t has parent-company ?name-value;
+#    };
+
 rule attribute-parent-company:
     when {
         (parent-company: $c, company-member: $t) isa company-membership;
         $c has name $c-name;
-        $pc isa parent-company;        
+        $pc isa parent-company;
         $c-name = $pc;
     } then {
         $t has $pc;
@@ -131,6 +140,7 @@ set-membership sub membership,
     relates set-member as member;
 
 ownership sub relation,
+    abstract,
     relates owned,
     relates owner;
 
@@ -206,7 +216,8 @@ user-account sub user-group,
     owns email;
 
 file sub resource,
-    owns path;
+    owns path,
+    owns size-kb;
 
 interface sub resource,
     owns name;
@@ -215,7 +226,8 @@ record sub resource,
     owns number;
 
 directory sub resource-collection,
-    owns path;
+    owns path,
+    owns size-kb;
 
 application sub resource-collection,
     owns name;
@@ -244,6 +256,9 @@ number sub id,
 
 full-name sub attribute,
     value string;
+
+size-kb sub attribute,
+    value long;
 
 rule transitive-membership:
     when {
@@ -333,3 +348,15 @@ rule automatic-permission-validity:
     } then {
         $p has validity true;
     };
+    
+rule add-view-access:
+    when {
+        $modify isa action, has action-name "modify_file";
+        $view isa action, has action-name "view_file";
+        $ac_modify (accessed-object: $obj, valid-action: $modify) isa access;
+        $ac_view (accessed-object: $obj, valid-action: $view) isa access;
+        (permitted-subject: $subj, permitted-access: $ac_modify) isa permission;
+    } then {
+        (permitted-subject: $subj, permitted-access: $ac_view) isa permission;
+    };
+    
