@@ -1,11 +1,11 @@
 match
-  $rec isa record, has number $num;
-get $num; 
-mean $num;
-#median $numl;
-#count $num;
-#min $num;
-#max $num;
-#sum $num;
+  $f isa file, has size-kb $s;
+get $s; 
+#mean $s;
+#median $s;
+#count;
+#min $s;
+#max $s;
+#sum $s;
 
 
