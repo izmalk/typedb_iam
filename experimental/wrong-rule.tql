@@ -1,0 +1,8 @@
+define 
+
+rule test-wrong:
+    when {
+        $pa isa person;
+    } then {
+        $p has full-name "Dude";
+    };

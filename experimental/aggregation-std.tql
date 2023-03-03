@@ -1,0 +1,4 @@
+match
+  $f isa file, has size-kb $s;
+get $f, $s; std $s;
+

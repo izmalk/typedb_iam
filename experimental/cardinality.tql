@@ -1,0 +1,4 @@
+match 
+  $p isa person, has full-name "John Parkson"; 
+insert $p has email "john.parkson@vaticle.com", has email "admin@jp.com", has email "jp@gmail.com";
+

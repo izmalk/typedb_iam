@@ -6,6 +6,6 @@ get $s;
 #count;
 #min $s;
 #max $s;
-#sum $s;
+sum $s;
 
 

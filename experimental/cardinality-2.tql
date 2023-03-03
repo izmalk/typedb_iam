@@ -1,0 +1,1 @@
+match $f isa file, has path "README.md"; insert $f has size-kb 55, has size-kb 65, has size-kb 70, has path "README2.md";

@@ -1,0 +1,4 @@
+match $p isa person, has full-name $n, has email $e; 
+get $n, $e; 
+sort $n asc, $e desc;
+

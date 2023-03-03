@@ -1,0 +1,6 @@
+match 
+$o isa object, has path $fp; 
+  $fp like "(logs/.*)"; 
+delete 
+  $o has path $fp;
+

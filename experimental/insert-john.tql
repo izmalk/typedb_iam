@@ -1,0 +1,2 @@
+insert $p isa person, has full-name "John Parkson", has email "john.parkson@gmail.com", has credential "qwerty1";
+
