@@ -1,0 +1,15 @@
+define
+
+id sub attribute,
+    abstract,
+    value string;
+
+path sub id,
+    value string;
+
+resource sub entity,
+    abstract,
+    owns id;
+
+file sub resource,
+    owns path as id;

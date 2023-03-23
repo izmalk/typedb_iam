@@ -1,0 +1,19 @@
+match
+
+        $p1 isa person, has full-name "Bob1";
+        $p2 isa person, has full-name "Bob2";
+        $ac isa operation, has action-name "view_file2";
+        $f isa file, has path "README233.md";
+        $a($f, $ac) isa access;
+        $pe1($p1, $a) isa permission;
+        $pe2($p2, $a) isa permission;
+           
+delete
+        
+        $p1 isa person;
+        $p2 isa person;
+        $ac isa operation;
+        $f isa file;
+        $a isa access;
+        $pe1 isa permission;
+        $pe2 isa permission;

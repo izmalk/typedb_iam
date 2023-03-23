@@ -1,0 +1,5 @@
+#match $t sub $a; {$a type entity;} or {$a type attribute;} or {$a type relation;};
+#match $t sub $a; {$a sub entity;} or {$a sub attribute;} or {$a sub relation;};
+#match $t sub $a;
+match $t sub thing;
+#count;

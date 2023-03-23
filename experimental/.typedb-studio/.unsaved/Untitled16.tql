@@ -1,0 +1,9 @@
+match
+       $f isa file, has path "README.md"; 
+insert
+        $p1 isa person;
+        $p1 has full-name $pn1;
+        $pn1 "Bob";
+        $ac isa operation, has action-name "view_file"; 
+        $a($f, $ac) isa access;
+        $pe1($p1, $a) isa permission;

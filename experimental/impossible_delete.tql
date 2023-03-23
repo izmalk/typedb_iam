@@ -1,0 +1,2 @@
+match $p isa person, has full-name "1111111NO_NAME", has email $email;
+delete $p has $email;

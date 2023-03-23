@@ -1,8 +1,0 @@
-insert $s isa operation-set, has name "manage_ownership";
-insert $s isa operation-set, has name "manage_permissions";
-insert $s isa operation-set, has name "perform_all_actions";
-insert $s isa operation-set, has name "perform_admin_actions";
-insert $s isa operation-set, has name "manage_subdirectories";
-insert $s isa operation-set, has name "perform_writes";
-insert $s isa operation-set, has name "perform_writes";
-insert $s isa operation-set, has name "perform_reads";

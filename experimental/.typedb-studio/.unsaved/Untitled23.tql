@@ -1,0 +1,1865 @@
+define
+
+attribute-type sub attribute,
+    value string;
+
+custom-attribute sub attribute,
+    value string,
+    owns attribute-type,
+    plays data-marking:marked;
+
+stix-attribute-boolean sub attribute,
+    abstract,
+    value boolean,
+    plays data-marking:marked;
+
+aslr-enabled sub stix-attribute-boolean,
+    value boolean;
+
+can-escalate-privs sub stix-attribute-boolean,
+    value boolean;
+
+dep-enabled sub stix-attribute-boolean,
+    value boolean;
+
+is-active sub stix-attribute-boolean,
+    value boolean;
+
+is-blocking sub stix-attribute-boolean,
+    value boolean;
+
+is-disabled sub stix-attribute-boolean,
+    value boolean;
+
+is-family sub stix-attribute-boolean,
+    value boolean;
+
+is-hidden sub stix-attribute-boolean,
+    value boolean;
+
+is-listening sub stix-attribute-boolean,
+    value boolean;
+
+is-multipart sub stix-attribute-boolean,
+    value boolean;
+
+is-privileged sub stix-attribute-boolean,
+    value boolean;
+
+is-self-signed sub stix-attribute-boolean,
+    value boolean;
+
+is-service-account sub stix-attribute-boolean,
+    value boolean;
+
+revoked sub stix-attribute-boolean,
+    value boolean;
+
+stix-attribute-double sub attribute,
+    abstract,
+    value double,
+    plays data-marking:marked;
+
+address-of-entry-point sub stix-attribute-double,
+    value double;
+
+base-of-code sub stix-attribute-double,
+    value double;
+
+base-of-data sub stix-attribute-double,
+    value double;
+
+bits-per-pixel sub stix-attribute-double,
+    value double;
+
+count sub stix-attribute-double,
+    value double;
+
+dst-byte-count sub stix-attribute-double,
+    value double;
+
+dst-packet sub stix-attribute-double,
+    value double;
+
+dst-packets sub stix-attribute-double,
+    value double;
+
+dst-port sub stix-attribute-double,
+    value double;
+
+entropy sub stix-attribute-double,
+    value double;
+
+file-alignment sub stix-attribute-double,
+    value double;
+
+image-height sub stix-attribute-double,
+    value double;
+
+image-width sub stix-attribute-double,
+    value double;
+
+latitude sub stix-attribute-double,
+    value double;
+
+longitude sub stix-attribute-double,
+    value double;
+
+major-image-version sub stix-attribute-double,
+    value double;
+
+major-linker-version sub stix-attribute-double,
+    value double;
+
+major-os-version sub stix-attribute-double,
+    value double;
+
+major-subsystem-version sub stix-attribute-double,
+    value double;
+
+message-body-length sub stix-attribute-double,
+    value double;
+
+minor-image-version sub stix-attribute-double,
+    value double;
+
+minor-linker-version sub stix-attribute-double,
+    value double;
+
+minor-os-version sub stix-attribute-double,
+    value double;
+
+minor-subsystem-version sub stix-attribute-double,
+    value double;
+
+number sub stix-attribute-double,
+    value double;
+
+number-observed sub stix-attribute-double,
+    value double;
+
+number-of-rva-and-sizes sub stix-attribute-double,
+    value double;
+
+number-of-sections sub stix-attribute-double,
+    value double;
+
+number-of-symbols sub stix-attribute-double,
+    value double;
+
+pid sub stix-attribute-double,
+    value double;
+
+precision sub stix-attribute-double,
+    value double;
+
+section-alignment sub stix-attribute-double,
+    value double;
+
+size sub stix-attribute-double,
+    value double;
+
+size-of-code sub stix-attribute-double,
+    value double;
+
+size-of-headers sub stix-attribute-double,
+    value double;
+
+size-of-heap-commit sub stix-attribute-double,
+    value double;
+
+size-of-heap-reserve sub stix-attribute-double,
+    value double;
+
+size-of-image sub stix-attribute-double,
+    value double;
+
+size-of-initialized-data sub stix-attribute-double,
+    value double;
+
+size-of-optional-header sub stix-attribute-double,
+    value double;
+
+size-of-stack-commit sub stix-attribute-double,
+    value double;
+
+size-of-stack-reserve sub stix-attribute-double,
+    value double;
+
+size-ofuninitialized-data sub stix-attribute-double,
+    value double;
+
+socket-descriptor sub stix-attribute-double,
+    value double;
+
+socket-handle sub stix-attribute-double,
+    value double;
+
+src-byte-count sub stix-attribute-double,
+    value double;
+
+src-packets sub stix-attribute-double,
+    value double;
+
+src-port sub stix-attribute-double,
+    value double;
+
+subject-public-key-exponent sub stix-attribute-double,
+    value double;
+
+subsystem-hex sub stix-attribute-double,
+    value double;
+
+stix-attribute-string sub attribute,
+    abstract,
+    value string,
+    plays data-marking:marked;
+
+abstract-note sub stix-attribute-string,
+    value string;
+
+account-login sub stix-attribute-string,
+    value string;
+
+account-type sub stix-attribute-string,
+    value string;
+
+action sub stix-attribute-string,
+    value string;
+
+additional-header-field-key sub stix-attribute-string,
+    value string;
+
+additional-header-field-value sub stix-attribute-string,
+    value string;
+
+address-family sub stix-attribute-string,
+    value string;
+
+administrative-area sub stix-attribute-string,
+    value string;
+
+alias sub stix-attribute-string,
+    value string;
+
+analysis-definition-version sub stix-attribute-string,
+    value string;
+
+analysis-engine-version sub stix-attribute-string,
+    value string;
+
+architecture-execution-envs sub stix-attribute-string,
+    value string;
+
+attribute-key sub stix-attribute-string,
+    value string;
+
+authority-key-identifier sub stix-attribute-string,
+    value string;
+
+authors sub stix-attribute-string,
+    value string;
+
+basic-constraints sub stix-attribute-string,
+    value string;
+
+body sub stix-attribute-string,
+    value string;
+
+capability sub stix-attribute-string,
+    value string;
+
+certificate-policies sub stix-attribute-string,
+    value string;
+
+characterstics-hex sub stix-attribute-string,
+    value string;
+
+checksum-hex sub stix-attribute-string,
+    value string;
+
+city sub stix-attribute-string,
+    value string;
+
+command-line sub stix-attribute-string,
+    value string;
+
+comment sub stix-attribute-string,
+    value string;
+
+confidence sub stix-attribute-string,
+    value string;
+
+configuration-version sub stix-attribute-string,
+    value string;
+
+contact-information sub stix-attribute-string,
+    value string;
+
+content sub stix-attribute-string,
+    value string;
+
+content-disposition sub stix-attribute-string,
+    value string;
+
+content-type sub stix-attribute-string,
+    value string;
+
+context sub stix-attribute-string,
+    value string;
+
+country sub stix-attribute-string,
+    value string;
+
+created sub stix-attribute-string,
+    value string;
+
+credential sub stix-attribute-string,
+    value string;
+
+crl-distribution-points sub stix-attribute-string,
+    value string;
+
+cwd sub stix-attribute-string,
+    value string;
+
+data sub stix-attribute-string,
+    value string;
+
+data-type sub stix-attribute-string,
+    value string;
+
+decryption-key sub stix-attribute-string,
+    value string;
+
+defanged sub stix-attribute-string,
+    value string;
+
+description sub stix-attribute-string,
+    value string;
+
+display-name sub stix-attribute-string,
+    value string;
+
+dll-characteristics-hex sub stix-attribute-string,
+    value string;
+
+document-info-dict sub stix-attribute-string,
+    value string;
+
+dst-flags-hex sub stix-attribute-string,
+    value string;
+
+encryption-algorithm sub stix-attribute-string,
+    value string;
+
+environment-variables sub stix-attribute-string,
+    value string;
+
+exif-tags sub stix-attribute-string,
+    value string;
+
+explanation sub stix-attribute-string,
+    value string;
+
+extended-key-usage sub stix-attribute-string,
+    value string;
+
+extensions sub stix-attribute-string,
+    value string;
+
+external-id sub stix-attribute-string,
+    value string;
+
+file-header-hash sub stix-attribute-string,
+    value string;
+
+first-observed sub stix-attribute-string,
+    value string;
+
+first-seen sub stix-attribute-string,
+    value string;
+
+gid sub stix-attribute-string,
+    value string;
+
+goals sub stix-attribute-string,
+    value string;
+
+group-name sub stix-attribute-string,
+    value string;
+
+hash-general sub stix-attribute-string,
+    value string;
+
+hash-value sub stix-attribute-string,
+    value string;
+
+home-dir sub stix-attribute-string,
+    value string;
+
+icmp-code-hex sub stix-attribute-string,
+    value string;
+
+icmp-type-hex sub stix-attribute-string,
+    value string;
+
+imphash sub stix-attribute-string,
+    value string;
+
+implementation-languages sub stix-attribute-string,
+    value string;
+
+indicator-type sub stix-attribute-string,
+    value string;
+
+infrastructure-type sub stix-attribute-string,
+    value string;
+
+inhibit-any-policy sub stix-attribute-string,
+    value string;
+
+integrity-level sub stix-attribute-string,
+    value string;
+
+ipfix sub stix-attribute-string,
+    value string;
+
+is-optimized sub stix-attribute-string,
+    value string;
+
+issuer sub stix-attribute-string,
+    value string;
+
+issuer-alternative-name sub stix-attribute-string,
+    value string;
+
+key-usage sub stix-attribute-string,
+    value string;
+
+kill-chain-name sub stix-attribute-string,
+    value string;
+
+labels sub stix-attribute-string,
+    value string;
+
+langs sub stix-attribute-string,
+    value string;
+
+language sub stix-attribute-string,
+    value string;
+
+last-observed sub stix-attribute-string,
+    value string;
+
+last-seen sub stix-attribute-string,
+    value string;
+
+loader-flags-hex sub stix-attribute-string,
+    value string;
+
+machine-hex sub stix-attribute-string,
+    value string;
+
+magic-hex sub stix-attribute-string,
+    value string;
+
+magic-number-hex sub stix-attribute-string,
+    value string;
+
+malware-type sub stix-attribute-string,
+    value string;
+
+message-id sub stix-attribute-string,
+    value string;
+
+mime-type sub stix-attribute-string,
+    value string;
+
+modified sub stix-attribute-string,
+    value string;
+
+modified-time sub stix-attribute-string,
+    value string;
+
+module sub stix-attribute-string,
+    value string;
+
+name sub stix-attribute-string,
+    value string;
+
+name-constraints sub stix-attribute-string,
+    value string;
+
+name-enc sub stix-attribute-string,
+    value string;
+
+number-subkeys sub stix-attribute-string,
+    value string;
+
+object sub stix-attribute-string,
+    value string;
+
+object-marking-refs sub stix-attribute-string,
+    value string;
+
+objective sub stix-attribute-string,
+    value string;
+
+operating-system-refs sub stix-attribute-string,
+    value string;
+
+opinion-enum sub stix-attribute-string,
+    value string;
+
+options sub stix-attribute-string,
+    value string;
+
+owner-sid sub stix-attribute-string,
+    value string;
+
+path sub stix-attribute-string,
+    value string;
+
+path-enc sub stix-attribute-string,
+    value string;
+
+pattern sub stix-attribute-string,
+    value string;
+
+pattern-type sub stix-attribute-string,
+    value string;
+
+pattern-version sub stix-attribute-string,
+    value string;
+
+payload-bin sub stix-attribute-string,
+    value string;
+
+pdfid0 sub stix-attribute-string,
+    value string;
+
+pdfid1 sub stix-attribute-string,
+    value string;
+
+pe-type sub stix-attribute-string,
+    value string;
+
+personal-motivations sub stix-attribute-string,
+    value string;
+
+phase-name sub stix-attribute-string,
+    value string;
+
+pointer-to-symbol-table-hex sub stix-attribute-string,
+    value string;
+
+policy-constraints sub stix-attribute-string,
+    value string;
+
+policy-mappings sub stix-attribute-string,
+    value string;
+
+postal-code sub stix-attribute-string,
+    value string;
+
+primary-motivation sub stix-attribute-string,
+    value string;
+
+priority sub stix-attribute-string,
+    value string;
+
+product sub stix-attribute-string,
+    value string;
+
+protocol sub stix-attribute-string,
+    value string;
+
+received-lines sub stix-attribute-string,
+    value string;
+
+region sub stix-attribute-string,
+    value string;
+
+report-type sub stix-attribute-string,
+    value string;
+
+request-header sub stix-attribute-string,
+    value string;
+
+request-method sub stix-attribute-string,
+    value string;
+
+request-value sub stix-attribute-string,
+    value string;
+
+request-version sub stix-attribute-string,
+    value string;
+
+resource-level sub stix-attribute-string,
+    value string;
+
+result sub stix-attribute-string,
+    value string;
+
+result-name sub stix-attribute-string,
+    value string;
+
+rir sub stix-attribute-string,
+    value string;
+
+sample-refs sub stix-attribute-string,
+    value string;
+
+secondary-motivations sub stix-attribute-string,
+    value string;
+
+sector sub stix-attribute-string,
+    value string;
+
+serial-number sub stix-attribute-string,
+    value string;
+
+service-name sub stix-attribute-string,
+    value string;
+
+service-status sub stix-attribute-string,
+    value string;
+
+service-type sub stix-attribute-string,
+    value string;
+
+shell sub stix-attribute-string,
+    value string;
+
+sid sub stix-attribute-string,
+    value string;
+
+signature-algorithm sub stix-attribute-string,
+    value string;
+
+socket-type sub stix-attribute-string,
+    value string;
+
+sophistication sub stix-attribute-string,
+    value string;
+
+source-name sub stix-attribute-string,
+    value string;
+
+spe sub stix-attribute-string,
+    value string;
+
+spec-version sub stix-attribute-string,
+    value string;
+
+src-flags-hex sub stix-attribute-string,
+    value string;
+
+start-type sub stix-attribute-string,
+    value string;
+
+startup-info sub stix-attribute-string,
+    value string;
+
+statement sub stix-attribute-string,
+    value string;
+
+stix-id sub stix-attribute-string,
+    value string;
+
+stix-role sub stix-attribute-string,
+    value string;
+
+stix-type sub stix-attribute-string,
+    value string;
+
+street-address sub stix-attribute-string,
+    value string;
+
+subject sub stix-attribute-string,
+    value string;
+
+subject-alternative-name sub stix-attribute-string,
+    value string;
+
+subject-directory-attributes sub stix-attribute-string,
+    value string;
+
+subject-key-identifier sub stix-attribute-string,
+    value string;
+
+subject-public-key-algorithm sub stix-attribute-string,
+    value string;
+
+subject-public-key-modulus sub stix-attribute-string,
+    value string;
+
+summary sub stix-attribute-string,
+    value string;
+
+swid sub stix-attribute-string,
+    value string;
+
+threat-actor-type sub stix-attribute-string,
+    value string;
+
+tool-type sub stix-attribute-string,
+    value string;
+
+tool-version sub stix-attribute-string,
+    value string;
+
+unix-group sub stix-attribute-string,
+    value string;
+
+url sub stix-attribute-string,
+    value string;
+
+user-id sub stix-attribute-string,
+    value string;
+
+valid-from sub stix-attribute-string,
+    value string;
+
+valid-until sub stix-attribute-string,
+    value string;
+
+value sub stix-attribute-string,
+    value string;
+
+vendor sub stix-attribute-string,
+    value string;
+
+version sub stix-attribute-string,
+    value string;
+
+win32-version-value-hex sub stix-attribute-string,
+    value string;
+
+window-title sub stix-attribute-string,
+    value string;
+
+stix-attribute-timestamp sub attribute,
+    abstract,
+    value datetime,
+    plays data-marking:marked;
+
+account-created sub stix-attribute-timestamp,
+    value datetime;
+
+account-expires sub stix-attribute-timestamp,
+    value datetime;
+
+account-first-login sub stix-attribute-timestamp,
+    value datetime;
+
+account-last-login sub stix-attribute-timestamp,
+    value datetime;
+
+analysis-ended sub stix-attribute-timestamp,
+    value datetime;
+
+analysis-started sub stix-attribute-timestamp,
+    value datetime;
+
+atime sub stix-attribute-timestamp,
+    value datetime;
+
+created-time sub stix-attribute-timestamp,
+    value datetime;
+
+credential-last-changed sub stix-attribute-timestamp,
+    value datetime;
+
+ctime sub stix-attribute-timestamp,
+    value datetime;
+
+date sub stix-attribute-timestamp,
+    value datetime;
+
+end sub stix-attribute-timestamp,
+    value datetime;
+
+mtime sub stix-attribute-timestamp,
+    value datetime;
+
+private-key-usage-period-not-after sub stix-attribute-timestamp,
+    value datetime;
+
+private-key-usage-period-not-before sub stix-attribute-timestamp,
+    value datetime;
+
+published sub stix-attribute-timestamp,
+    value datetime;
+
+start sub stix-attribute-timestamp,
+    value datetime;
+
+submitted sub stix-attribute-timestamp,
+    value datetime;
+
+time-date-stamp sub stix-attribute-timestamp,
+    value datetime;
+
+validity-not-after sub stix-attribute-timestamp,
+    value datetime;
+
+validity-not-before sub stix-attribute-timestamp,
+    value datetime;
+
+belong sub relation,
+    relates belonged,
+    relates belonging-to;
+
+ipv-autonomous-system-belong sub belong;
+
+user-email-belong sub belong;
+
+body-multipart sub relation,
+    relates contained-in,
+    relates mime-part;
+
+body-raw-reference sub relation,
+    relates containing-mime,
+    relates non-textual-mime-part;
+
+connection-opening sub relation,
+    relates opened-by,
+    relates opened-connection;
+
+content-file-containing sub relation,
+    relates contained-content,
+    relates containing-file;
+
+data-marking sub relation,
+    relates marked,
+    relates marking;
+
+granular-marking sub data-marking;
+
+object-marking sub data-marking;
+
+derivation sub relation,
+    relates derived-from,
+    relates deriving;
+
+directory-reference sub relation,
+    relates child-directory,
+    relates file-in-directory,
+    relates parent-directory;
+
+dll-loading-process sub relation,
+    relates loaded-dll,
+    relates loading-process;
+
+duplicate sub relation,
+    relates duplicated-object;
+
+email-sending sub relation,
+    relates bcc-email,
+    relates cc-email,
+    relates from-email,
+    relates sender-email,
+    relates sent-email,
+    relates to-email;
+
+execution sub relation,
+    relates executed-malware,
+    relates host-vm,
+    relates operating-system;
+
+external-referencing sub relation,
+    relates referenced,
+    relates referencing;
+
+file-contain sub relation,
+    relates contained-coo,
+    relates contained-file,
+    relates containing-file;
+
+hash-association sub relation,
+    relates associated-file,
+    relates contained-hash;
+
+image-process sub relation,
+    relates executed-image,
+    relates executing-process;
+
+kill-chain sub relation,
+    owns kill-chain-name,
+    relates participating-kill-chain-phase;
+
+message-body-data-reference sub relation,
+    relates contained-data,
+    relates message-body;
+
+metadata-specification sub relation,
+    relates pe-file-section,
+    relates pebinary;
+
+network-traffic-destination sub relation,
+    owns dst-byte-count,
+    owns dst-packets,
+    owns dst-port,
+    relates destination,
+    relates payload,
+    relates traffic;
+
+network-traffic-encapsulate sub relation,
+    relates encapsulated,
+    relates encapsulating;
+
+network-traffic-source sub relation,
+    owns src-byte-count,
+    owns src-packets,
+    owns src-port,
+    relates payload,
+    relates source,
+    relates traffic;
+
+ntfs-alt-contain sub relation,
+    relates contained-alt-data-stream,
+    relates containing-ntfs-ext;
+
+optional-header sub relation,
+    relates optional-headers,
+    relates pebinary;
+
+os-host sub relation,
+    relates installed-software,
+    relates os-system;
+
+process-hierarchy sub relation,
+    relates child,
+    relates parent;
+
+raw-email-reference sub relation,
+    relates binary,
+    relates email;
+
+relatedness sub relation,
+    relates related-to;
+
+sample sub relation,
+    relates associated-to,
+    relates sco-sample;
+
+malware-analysis-sample sub sample;
+
+malware-sample sub sample;
+
+stix-core-relationship sub relation,
+    owns confidence,
+    owns created,
+    owns custom-attribute,
+    owns description,
+    owns extensions,
+    owns labels,
+    owns langs,
+    owns modified,
+    owns revoked,
+    owns spec-version,
+    owns stix-id,
+    owns stix-type,
+    relates active-role,
+    relates passive-role,
+    plays data-marking:marked,
+    plays external-referencing:referencing;
+
+analysis sub stix-core-relationship,
+    relates analysed,
+    relates analysing,
+    relates captured-sco,
+    relates host-vm,
+    relates installed-software,
+    relates operating-system;
+
+av-analysis sub analysis;
+
+dynamic-analysis sub analysis;
+
+statis-analysis sub analysis;
+
+attribution sub stix-core-relationship,
+    relates attributed,
+    relates attributing;
+
+authorship sub stix-core-relationship,
+    relates authored,
+    relates authoring;
+
+basing sub stix-core-relationship,
+    relates based-on,
+    relates basing-on;
+
+beacon sub stix-core-relationship,
+    relates beaconed-to,
+    relates beaconing-to;
+
+characterise sub stix-core-relationship,
+    relates characterised,
+    relates characterising;
+
+communication sub stix-core-relationship,
+    relates communicated,
+    relates communicating;
+
+compromise sub stix-core-relationship,
+    relates compromised,
+    relates compromising;
+
+consist sub stix-core-relationship,
+    relates consisted,
+    relates consisting;
+
+control sub stix-core-relationship,
+    relates controled,
+    relates controling;
+
+creation sub stix-core-relationship,
+    relates created,
+    relates creator;
+
+delivery sub stix-core-relationship,
+    relates delivered,
+    relates delivering;
+
+download sub stix-core-relationship,
+    relates downloaded,
+    relates downloading;
+
+drop sub stix-core-relationship,
+    relates dropped,
+    relates dropping;
+
+exfiltrate sub stix-core-relationship,
+    relates exfiltrated-to,
+    relates exfiltrating-to;
+
+exploit sub stix-core-relationship,
+    relates exploited,
+    relates exploiting;
+
+have sub stix-core-relationship,
+    relates had,
+    relates having;
+
+host sub stix-core-relationship,
+    relates hosted,
+    relates hosting;
+
+impersonate sub stix-core-relationship,
+    relates impersonated,
+    relates impersonating;
+
+indication sub stix-core-relationship,
+    relates indicated,
+    relates indicating;
+
+investigation sub stix-core-relationship,
+    relates investigated,
+    relates investigating;
+
+kill-chain-usage sub stix-core-relationship,
+    relates kill-chain-used,
+    relates kill-chain-using;
+
+located-at sub stix-core-relationship,
+    relates located,
+    relates locating;
+
+mitigation sub stix-core-relationship,
+    relates mitigated,
+    relates mitigating;
+
+inferred-mitigation sub mitigation;
+
+origination sub stix-core-relationship,
+    relates originated-from,
+    relates originating;
+
+ownership sub stix-core-relationship,
+    relates owned,
+    relates owning;
+
+reference sub stix-core-relationship,
+    relates referred,
+    relates referring;
+
+remediation sub stix-core-relationship,
+    relates remediated,
+    relates remediating;
+
+resolve sub stix-core-relationship,
+    relates resolves-to,
+    relates resolving;
+
+domain-ipv-resolve sub resolve;
+
+ipv-mac-resolve sub resolve;
+
+sighting sub stix-core-relationship,
+    owns count,
+    owns first-seen,
+    owns last-seen,
+    owns summary,
+    relates observed,
+    relates saw,
+    relates sighting-of;
+
+target sub stix-core-relationship,
+    relates targetted,
+    relates targetting;
+
+use sub stix-core-relationship,
+    relates used,
+    relates used-by;
+
+variant sub stix-core-relationship,
+    relates variant-source,
+    relates variant-target;
+
+user-creation sub relation,
+    relates creating,
+    relates process-created,
+    relates windows-registry-key-created;
+
+windows-registry-key-value sub relation,
+    relates key,
+    relates value;
+
+alternative-data-stream sub entity,
+    owns hash-value,
+    owns name,
+    owns size,
+    plays ntfs-alt-contain:contained-alt-data-stream;
+
+hash sub entity,
+    owns hash-value,
+    plays hash-association:contained-hash;
+
+md5 sub hash;
+
+sha-1 sub hash;
+
+sha-256 sub hash;
+
+sha-512 sub hash;
+
+sha3-256 sub hash;
+
+sha3-512 sub hash;
+
+ssdeep sub hash;
+
+tlsh sub hash;
+
+stix-object sub entity,
+    owns custom-attribute,
+    owns stix-id,
+    owns stix-type,
+    plays stix-core-relationship:active-role,
+    plays stix-core-relationship:passive-role;
+
+stix-core-object sub stix-object,
+    owns extensions,
+    owns spec-version,
+    plays creation:created,
+    plays data-marking:marked,
+    plays derivation:derived-from,
+    plays derivation:deriving,
+    plays duplicate:duplicated-object,
+    plays relatedness:related-to,
+    plays sighting:sighting-of;
+
+stix-cyber-observable-object sub stix-core-object,
+    owns defanged,
+    plays analysis:captured-sco,
+    plays file-contain:contained-coo,
+    plays reference:referred;
+
+artifact sub stix-cyber-observable-object,
+    owns decryption-key,
+    owns encryption-algorithm,
+    owns hash-value,
+    owns mime-type,
+    owns payload-bin,
+    owns url,
+    plays body-raw-reference:non-textual-mime-part,
+    plays content-file-containing:containing-file,
+    plays message-body-data-reference:contained-data,
+    plays network-traffic-destination:payload,
+    plays network-traffic-source:payload,
+    plays raw-email-reference:binary,
+    plays sample:sco-sample;
+
+autonomous-system sub stix-cyber-observable-object,
+    owns name,
+    owns number,
+    owns rir,
+    plays belong:belonging-to;
+
+directory sub stix-cyber-observable-object,
+    owns atime,
+    owns ctime,
+    owns mtime,
+    owns path,
+    owns path-enc,
+    plays directory-reference:child-directory,
+    plays directory-reference:parent-directory;
+
+domain-name sub stix-cyber-observable-object,
+    owns value,
+    plays communication:communicated,
+    plays network-traffic-destination:destination,
+    plays network-traffic-source:source,
+    plays resolve:resolves-to,
+    plays resolve:resolving;
+
+email-addr sub stix-cyber-observable-object,
+    owns display-name,
+    owns value,
+    plays belong:belonged,
+    plays email-sending:bcc-email,
+    plays email-sending:cc-email,
+    plays email-sending:from-email,
+    plays email-sending:to-email;
+
+email-message sub stix-cyber-observable-object,
+    owns additional-header-field-key,
+    owns additional-header-field-value,
+    owns body,
+    owns content-type,
+    owns date,
+    owns is-multipart,
+    owns message-id,
+    owns received-lines,
+    owns subject,
+    plays body-multipart:contained-in,
+    plays email-sending:sent-email,
+    plays raw-email-reference:email;
+
+email-mime-part sub stix-cyber-observable-object,
+    owns body,
+    owns content-disposition,
+    owns content-type,
+    plays body-multipart:mime-part,
+    plays body-raw-reference:containing-mime;
+
+file sub stix-cyber-observable-object,
+    owns atime,
+    owns ctime,
+    owns magic-number-hex,
+    owns mime-type,
+    owns mtime,
+    owns name,
+    owns name-enc,
+    owns size,
+    plays body-raw-reference:non-textual-mime-part,
+    plays content-file-containing:containing-file,
+    plays directory-reference:file-in-directory,
+    plays dll-loading-process:loaded-dll,
+    plays download:downloaded,
+    plays file-contain:contained-file,
+    plays file-contain:containing-file,
+    plays hash-association:associated-file,
+    plays image-process:executed-image,
+    plays sample:sco-sample;
+
+archive-ext sub file,
+    owns comment;
+
+ntfs-ext sub file,
+    owns sid,
+    plays ntfs-alt-contain:containing-ntfs-ext;
+
+pdf-ext sub file,
+    owns document-info-dict,
+    owns is-optimized,
+    owns pdfid0,
+    owns pdfid1,
+    owns version;
+
+raster-image-ext sub file,
+    owns bits-per-pixel,
+    owns exif-tags,
+    owns image-height,
+    owns image-width;
+
+windows-pebinary-ext sub file,
+    owns characterstics-hex,
+    owns file-header-hash,
+    owns imphash,
+    owns machine-hex,
+    owns number-of-sections,
+    owns number-of-symbols,
+    owns pe-type,
+    owns pointer-to-symbol-table-hex,
+    owns size-of-optional-header,
+    owns time-date-stamp,
+    plays metadata-specification:pebinary,
+    plays optional-header:pebinary;
+
+ipv4-address sub stix-cyber-observable-object,
+    owns value,
+    plays belong:belonged,
+    plays communication:communicated,
+    plays network-traffic-destination:destination,
+    plays network-traffic-source:source,
+    plays resolve:resolves-to,
+    plays resolve:resolving;
+
+ipv6-address sub stix-cyber-observable-object,
+    owns value,
+    plays belong:belonged,
+    plays communication:communicated,
+    plays network-traffic-destination:destination,
+    plays network-traffic-source:source,
+    plays resolve:resolves-to,
+    plays resolve:resolving;
+
+mac-addr sub stix-cyber-observable-object,
+    owns value,
+    plays network-traffic-destination:destination,
+    plays network-traffic-source:source,
+    plays resolve:resolves-to;
+
+mutex sub stix-cyber-observable-object,
+    owns name;
+
+network-traffic sub stix-cyber-observable-object,
+    owns end,
+    owns ipfix,
+    owns is-active,
+    owns protocol,
+    owns start,
+    plays connection-opening:opened-connection,
+    plays network-traffic-destination:traffic,
+    plays network-traffic-encapsulate:encapsulated,
+    plays network-traffic-encapsulate:encapsulating,
+    plays network-traffic-source:traffic,
+    plays sample:sco-sample;
+
+http-request-ext sub network-traffic,
+    owns message-body-length,
+    owns request-header,
+    owns request-method,
+    owns request-value,
+    owns request-version,
+    plays message-body-data-reference:message-body;
+
+icmp-ext sub network-traffic,
+    owns icmp-code-hex,
+    owns icmp-type-hex;
+
+socket-ext sub network-traffic,
+    owns address-family,
+    owns is-blocking,
+    owns is-listening,
+    owns options,
+    owns socket-descriptor,
+    owns socket-handle,
+    owns socket-type;
+
+tcp-ext sub network-traffic,
+    owns dst-flags-hex,
+    owns src-flags-hex;
+
+process sub stix-cyber-observable-object,
+    owns command-line,
+    owns created-time,
+    owns cwd,
+    owns environment-variables,
+    owns is-hidden,
+    owns pid,
+    plays connection-opening:opened-by,
+    plays image-process:executing-process,
+    plays process-hierarchy:child,
+    plays process-hierarchy:parent,
+    plays user-creation:process-created;
+
+windows-process-ext sub process,
+    owns aslr-enabled,
+    owns dep-enabled,
+    owns integrity-level,
+    owns owner-sid,
+    owns priority,
+    owns startup-info,
+    owns window-title;
+
+windows-service-ext sub process,
+    owns description,
+    owns display-name,
+    owns group-name,
+    owns service-name,
+    owns service-status,
+    owns service-type,
+    owns start-type,
+    plays dll-loading-process:loading-process;
+
+software sub stix-cyber-observable-object,
+    owns language,
+    owns name,
+    owns spe,
+    owns swid,
+    owns vendor,
+    owns version,
+    plays analysis:host-vm,
+    plays analysis:installed-software,
+    plays analysis:operating-system,
+    plays execution:operating-system;
+
+url-object sub stix-cyber-observable-object,
+    owns value,
+    plays communication:communicated;
+
+user-account sub stix-cyber-observable-object,
+    owns account-created,
+    owns account-expires,
+    owns account-first-login,
+    owns account-last-login,
+    owns account-login,
+    owns account-type,
+    owns can-escalate-privs,
+    owns credential,
+    owns credential-last-changed,
+    owns display-name,
+    owns is-disabled,
+    owns is-service-account,
+    owns user-id,
+    plays belong:belonging-to,
+    plays user-creation:creating;
+
+unix-account-ext sub user-account,
+    owns gid,
+    owns home-dir,
+    owns shell,
+    owns unix-group;
+
+windows-registry-key sub stix-cyber-observable-object,
+    owns attribute-key,
+    owns modified-time,
+    owns number-subkeys,
+    plays user-creation:windows-registry-key-created,
+    plays windows-registry-key-value:key;
+
+windows-registry-value-type sub stix-cyber-observable-object,
+    owns data,
+    owns data-type,
+    owns name,
+    plays windows-registry-key-value:value;
+
+x509-certificate sub stix-cyber-observable-object,
+    owns hash-value,
+    owns is-self-signed,
+    owns issuer,
+    owns serial-number,
+    owns signature-algorithm,
+    owns subject,
+    owns subject-public-key-algorithm,
+    owns subject-public-key-exponent,
+    owns subject-public-key-modulus,
+    owns validity-not-after,
+    owns validity-not-before,
+    owns version;
+
+x509-v3-extensions sub x509-certificate,
+    owns authority-key-identifier,
+    owns basic-constraints,
+    owns certificate-policies,
+    owns crl-distribution-points,
+    owns extended-key-usage,
+    owns inhibit-any-policy,
+    owns issuer-alternative-name,
+    owns key-usage,
+    owns name-constraints,
+    owns policy-constraints,
+    owns policy-mappings,
+    owns private-key-usage-period-not-after,
+    owns private-key-usage-period-not-before,
+    owns subject-alternative-name,
+    owns subject-directory-attributes,
+    owns subject-key-identifier;
+
+stix-domain-object sub stix-core-object,
+    owns confidence,
+    owns created,
+    owns labels,
+    owns langs,
+    owns modified,
+    owns revoked,
+    plays external-referencing:referencing,
+    plays indication:indicated;
+
+attack-pattern sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns name,
+    plays delivery:delivering,
+    plays kill-chain-usage:kill-chain-used,
+    plays mitigation:mitigated,
+    plays target:targetting,
+    plays use:used,
+    plays use:used-by;
+
+campaign sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns first-seen,
+    owns last-seen,
+    owns name,
+    owns objective,
+    plays attribution:attributing,
+    plays compromise:compromising,
+    plays origination:originating,
+    plays target:targetting,
+    plays use:used-by;
+
+course-of-action sub stix-domain-object,
+    owns action,
+    owns description,
+    owns name,
+    plays investigation:investigating,
+    plays mitigation:mitigating,
+    plays remediation:remediating;
+
+custom-object sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns first-seen,
+    owns last-seen,
+    owns name,
+    owns objective,
+    plays delivery:delivering,
+    plays kill-chain-usage:kill-chain-used,
+    plays mitigation:mitigated,
+    plays target:targetting,
+    plays use:used,
+    plays use:used-by;
+
+grouping sub stix-domain-object,
+    owns context,
+    owns description,
+    owns name,
+    plays reference:referring;
+
+identity sub stix-domain-object,
+    owns contact-information,
+    owns description,
+    owns name,
+    owns sector,
+    owns stix-role,
+    plays attribution:attributed,
+    plays creation:creator,
+    plays impersonate:impersonated,
+    plays located-at:locating,
+    plays sighting:saw,
+    plays target:targetted;
+
+class sub identity;
+
+group sub identity;
+
+id-unknown sub identity;
+
+individual sub identity;
+
+organization sub identity;
+
+system sub identity;
+
+incident sub stix-domain-object,
+    owns description,
+    owns name;
+
+indicator sub stix-domain-object,
+    owns description,
+    owns indicator-type,
+    owns name,
+    owns pattern,
+    owns pattern-type,
+    owns pattern-version,
+    owns valid-from,
+    owns valid-until,
+    plays basing:basing-on,
+    plays indication:indicating,
+    plays investigation:investigated,
+    plays kill-chain-usage:kill-chain-used,
+    plays mitigation:mitigated;
+
+infrastructure sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns first-seen,
+    owns infrastructure-type,
+    owns last-seen,
+    owns name,
+    plays beacon:beaconed-to,
+    plays communication:communicated,
+    plays communication:communicating,
+    plays compromise:compromised,
+    plays consist:consisting,
+    plays control:controled,
+    plays control:controling,
+    plays delivery:delivering,
+    plays exfiltrate:exfiltrated-to,
+    plays have:having,
+    plays host:hosted,
+    plays host:hosting,
+    plays kill-chain-usage:kill-chain-used,
+    plays located-at:locating,
+    plays ownership:owned,
+    plays target:targetted,
+    plays use:used,
+    plays use:used-by;
+
+intrusion-set sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns first-seen,
+    owns goals,
+    owns last-seen,
+    owns name,
+    owns primary-motivation,
+    owns resource-level,
+    owns secondary-motivations,
+    plays attribution:attributed,
+    plays attribution:attributing,
+    plays authorship:authored,
+    plays compromise:compromising,
+    plays host:hosting,
+    plays mitigation:mitigated,
+    plays origination:originating,
+    plays ownership:owning,
+    plays target:targetting,
+    plays use:used-by;
+
+location sub stix-domain-object,
+    owns administrative-area,
+    owns city,
+    owns country,
+    owns description,
+    owns latitude,
+    owns longitude,
+    owns name,
+    owns postal-code,
+    owns precision,
+    owns region,
+    owns street-address,
+    plays located-at:located,
+    plays origination:originated-from,
+    plays target:targetted;
+
+malware sub stix-domain-object,
+    owns alias,
+    owns architecture-execution-envs,
+    owns capability,
+    owns description,
+    owns first-seen,
+    owns implementation-languages,
+    owns is-family,
+    owns last-seen,
+    owns malware-type,
+    owns name,
+    plays analysis:analysed,
+    plays authorship:authoring,
+    plays beacon:beaconing-to,
+    plays characterise:characterised,
+    plays control:controled,
+    plays control:controling,
+    plays delivery:delivered,
+    plays download:downloaded,
+    plays download:downloading,
+    plays drop:dropped,
+    plays drop:dropping,
+    plays execution:executed-malware,
+    plays exfiltrate:exfiltrating-to,
+    plays exploit:exploiting,
+    plays host:hosting,
+    plays kill-chain-usage:kill-chain-used,
+    plays mitigation:mitigated,
+    plays origination:originating,
+    plays remediation:remediated,
+    plays sample:associated-to,
+    plays target:targetting,
+    plays use:used,
+    plays use:used-by,
+    plays variant:variant-source,
+    plays variant:variant-target;
+
+malware-analysis sub stix-domain-object,
+    owns analysis-definition-version,
+    owns analysis-ended,
+    owns analysis-engine-version,
+    owns analysis-started,
+    owns configuration-version,
+    owns module,
+    owns product,
+    owns result,
+    owns result-name,
+    owns submitted,
+    owns version,
+    plays analysis:analysing,
+    plays characterise:characterising,
+    plays sample:associated-to;
+
+note sub stix-domain-object,
+    owns abstract-note,
+    owns authors,
+    owns content,
+    plays reference:referring;
+
+observed-data sub stix-domain-object,
+    owns first-observed,
+    owns last-observed,
+    owns number-observed,
+    plays basing:based-on,
+    plays consist:consisted,
+    plays reference:referring,
+    plays sighting:observed;
+
+opinion sub stix-domain-object,
+    owns authors,
+    owns explanation,
+    owns opinion-enum,
+    plays reference:referring;
+
+report sub stix-domain-object,
+    owns description,
+    owns name,
+    owns published,
+    owns report-type,
+    plays reference:referring;
+
+threat-actor sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns first-seen,
+    owns goals,
+    owns last-seen,
+    owns name,
+    owns personal-motivations,
+    owns primary-motivation,
+    owns resource-level,
+    owns secondary-motivations,
+    owns sophistication,
+    owns stix-role,
+    owns threat-actor-type,
+    plays attribution:attributed,
+    plays attribution:attributing,
+    plays authorship:authored,
+    plays compromise:compromising,
+    plays host:hosting,
+    plays impersonate:impersonating,
+    plays located-at:locating,
+    plays ownership:owning,
+    plays target:targetting,
+    plays use:used-by;
+
+tool sub stix-domain-object,
+    owns alias,
+    owns description,
+    owns name,
+    owns tool-type,
+    owns tool-version,
+    plays delivery:delivering,
+    plays download:downloaded,
+    plays drop:dropped,
+    plays drop:dropping,
+    plays have:having,
+    plays host:hosted,
+    plays kill-chain-usage:kill-chain-used,
+    plays mitigation:mitigated,
+    plays target:targetting,
+    plays use:used,
+    plays use:used-by;
+
+vulnerability sub stix-domain-object,
+    owns description,
+    owns name,
+    plays exploit:exploited,
+    plays have:had,
+    plays mitigation:mitigated,
+    plays remediation:remediated,
+    plays target:targetted;
+
+stix-meta-object sub stix-object,
+    abstract,
+    owns created,
+    owns modified;
+
+external-reference sub stix-meta-object,
+    owns description,
+    owns external-id,
+    owns hash-general,
+    owns source-name,
+    owns url,
+    plays external-referencing:referenced;
+
+kill-chain-phase sub stix-meta-object,
+    owns kill-chain-name,
+    owns phase-name,
+    plays kill-chain-usage:kill-chain-using,
+    plays kill-chain:participating-kill-chain-phase;
+
+marking-definition sub stix-meta-object,
+    owns name,
+    owns spec-version,
+    plays creation:created,
+    plays data-marking:marking;
+
+statement-marking sub marking-definition,
+    owns statement;
+
+tlp-marking sub marking-definition;
+
+tlp-amber sub tlp-marking;
+
+tlp-green sub tlp-marking;
+
+tlp-red sub tlp-marking;
+
+tlp-white sub tlp-marking;
+
+windows-pe-optional-header-type sub entity,
+    owns address-of-entry-point,
+    owns base-of-code,
+    owns base-of-data,
+    owns checksum-hex,
+    owns dll-characteristics-hex,
+    owns file-alignment,
+    owns hash-value,
+    owns loader-flags-hex,
+    owns magic-hex,
+    owns major-image-version,
+    owns major-linker-version,
+    owns major-os-version,
+    owns major-subsystem-version,
+    owns minor-image-version,
+    owns minor-linker-version,
+    owns minor-os-version,
+    owns minor-subsystem-version,
+    owns number-of-rva-and-sizes,
+    owns section-alignment,
+    owns size-of-code,
+    owns size-of-headers,
+    owns size-of-heap-commit,
+    owns size-of-heap-reserve,
+    owns size-of-image,
+    owns size-of-initialized-data,
+    owns size-of-stack-commit,
+    owns size-of-stack-reserve,
+    owns size-ofuninitialized-data,
+    owns subsystem-hex,
+    owns win32-version-value-hex,
+    plays optional-header:optional-headers;
+
+windows-pe-section sub entity,
+    owns entropy,
+    owns hash-value,
+    owns name,
+    owns size,
+    plays metadata-specification:pe-file-section;
+
+

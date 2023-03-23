@@ -1,0 +1,3 @@
+match $p isa person;
+$a isa attribute;
+count;

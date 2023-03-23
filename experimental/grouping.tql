@@ -6,4 +6,4 @@ match
   $o has path $o-fp;
 # get $x-n, $act-n, $o-fp; group $o-fp;
 # count;
-get $x-n, $pe; group $x-n;
+get $x-n, $o-fp; group $x-n;

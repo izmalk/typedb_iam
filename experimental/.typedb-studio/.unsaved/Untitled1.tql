@@ -1,0 +1,1 @@
+match $o isa object, has path $fp; $fp like "(Tanya [A-Za-z0-9]+)"; 

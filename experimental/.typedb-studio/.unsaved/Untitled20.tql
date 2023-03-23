@@ -1,0 +1,18 @@
+define
+
+object sub entity, abstract, 
+    owns object-type;
+
+resource sub object,
+    abstract;
+
+file sub resource,
+    owns path,
+    owns file-type as object-type;
+
+path sub attribute, value string;
+
+object-type sub attribute, abstract, value string;
+
+file-type sub object-type, value string;
+

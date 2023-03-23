@@ -1,0 +1,1 @@
+match $f isa file, has path $fp, has size-kb $s; $s < 61;
