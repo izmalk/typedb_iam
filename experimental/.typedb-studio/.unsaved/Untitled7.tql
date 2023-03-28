@@ -1,2 +1,0 @@
-match
-  group-membership relates $p as member;

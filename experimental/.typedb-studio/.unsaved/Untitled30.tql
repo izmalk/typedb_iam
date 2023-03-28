@@ -1,1 +1,0 @@
-match $x isa $t; { $t type entity; } or { $t type relation; } or { $t type attribute; };

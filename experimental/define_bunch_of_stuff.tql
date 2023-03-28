@@ -1,0 +1,11 @@
+define
+  credential sub attribute, value string;
+  full-name sub attribute, value string;
+  id sub attribute, abstract, value string;
+  email sub id, value string;
+  membership sub relation, abstract, relates parent, relates member;
+  group-membership sub membership, relates parent-group as parent, relates group-member as member;
+  subject sub entity, abstract, owns credential, plays group-membership:group-member;
+  user sub subject, abstract;
+  person sub user, owns full-name, owns email;
+

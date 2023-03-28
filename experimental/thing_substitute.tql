@@ -1,0 +1,7 @@
+match 
+#$t sub thing;
+#$t sub $a;
+#$x isa $t; { $t type entity; } or { $t type relation; } or { $t type attribute; }; # That's instances of data, not types!
+$x sub $t; { $t type entity; } or { $t type relation; } or { $t type attribute; };
+#$x sub $t; { $t type entity; } or { $t type relation; } or { $t type attribute; } or { $t plays $role; };
+#count;

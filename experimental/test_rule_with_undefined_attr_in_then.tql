@@ -1,0 +1,8 @@
+define
+
+rule test-non-defined-attr:
+    when {
+        $p isa person;
+    } then {
+        $p has size-kb 55;
+    };

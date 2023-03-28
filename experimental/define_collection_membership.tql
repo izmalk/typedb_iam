@@ -1,0 +1,4 @@
+define 
+  membership sub relation, abstract, relates parent, relates member;
+  collection-membership sub membership, relates parent-collection as parent, relates collection-member as member;
+
