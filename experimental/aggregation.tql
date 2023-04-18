@@ -1,11 +1,12 @@
 match
   $f isa file, has size-kb $s;
-get $s; 
+#get $s; 
 #mean $s;
 #median $s;
-#count;
 #min $s;
 #max $s;
-sum $s;
-
-
+#sum $s;
+#limit 2;
+#sort $s;
+#group $f;
+#count;

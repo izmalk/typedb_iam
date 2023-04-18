@@ -1,0 +1,5 @@
+match
+$x is $x;
+$a is $a;
+$t is $t;
+{$x sub $t, owns $a;} or {$x sub $t, plays $a;};

@@ -1,0 +1,5 @@
+match 
+  $o isa object, has path $fp; 
+  $fp contains "logs/2023-2-5";
+delete 
+  $o isa object, has $fp;

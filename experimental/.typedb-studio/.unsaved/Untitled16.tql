@@ -1,0 +1,5 @@
+match 
+  #$o isa object, has path $fp; 
+  $fp like "(logs/2023-04-12T09:50:03.450Z.*)";
+#delete 
+  #$fp isa path;

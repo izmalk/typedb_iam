@@ -1,12 +1,10 @@
 define
 
-rule add-view-access:
+rule add-view-access2:
     when {
         $modify isa action, has action-name "modify_file";
         $view isa action, has action-name "view_file";
         $ac_modify (accessed-object: $obj, valid-action: $modify) isa access;
         $ac_view (accessed-object: $obj, valid-action: $view) isa access;
         (permitted-subject: $subj, permitted-access: $ac_modify) isa permission;
-    } then {
-        (permitted-subject: $subj, permitted-access: $ac_view) isa permission;
-    };
+    } then {(permitted-subject: $subj, permitted-access: $ac_view) isa permission;};

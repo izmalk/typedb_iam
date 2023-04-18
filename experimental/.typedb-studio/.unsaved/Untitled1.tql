@@ -1,0 +1,6 @@
+match
+  $x isa person;
+#  $act has action-name $act-n;
+  $f isa file;
+get $x, $f; 
+count;

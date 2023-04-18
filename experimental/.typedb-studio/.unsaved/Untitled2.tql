@@ -1,0 +1,64 @@
+#
+# Copyright (C) 2022 Vaticle
+#
+# Licensed to the Apache Software Foundation (ASF) under one
+# or more contributor license agreements.  See the NOTICE file
+# distributed with this work for additional information
+# regarding copyright ownership.  The ASF licenses this file
+# to you under the Apache License, Version 2.0 (the
+# "License"); you may not use this file except in compliance
+# with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing,
+# software distributed under the License is distributed on an
+# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+# KIND, either express or implied.  See the License for the
+# specific language governing permissions and limitations
+# under the License.
+#
+
+define
+
+    name sub attribute,
+      value string;
+    started-at sub attribute,
+      value datetime;
+    duration sub attribute,
+      value long;
+    first-name sub attribute,
+      value string;
+    last-name sub attribute,
+      value string;
+    phone-number sub attribute,
+      value string;
+    city sub attribute,
+      value string;
+    age sub attribute,
+      value long;
+
+    contract sub relation,
+        relates provider,
+        relates customer;
+
+    call sub relation,
+        relates caller,
+        relates callee,
+        owns started-at,
+        owns duration;
+
+    company sub entity,
+        plays contract:provider,
+        owns name;
+
+    person sub entity,
+        plays contract:customer,
+        plays call:caller,
+        plays call:callee,
+        owns first-name,
+        owns last-name,
+        owns phone-number,
+        owns city,
+        owns age;
+

@@ -19,29 +19,29 @@ define
 
 company sub entity,
     owns name,
-    plays company-membership:parent-company;
+    plays company-membership:company;
 
 company-membership sub relation,
-    relates parent-company,
-    relates company-member;
+    relates company,
+    relates member;
 
-parent-company sub attribute,
+parent-company-name sub attribute,
     value string;
 
 #rule attribute-parent-company:
 #    when {
-#        (parent-company: $c, company-member: $t) isa company-membership;
+#        (company: $c, member: $t) isa company-membership;
 #        $c has name $c-name;
 #        ?name-value = $c-name
 #    } then {
-#        $t has parent-company ?name-value;
+#        $t has parent-company-name ?name-value;
 #    };
 
 rule attribute-parent-company:
     when {
-        (parent-company: $c, company-member: $t) isa company-membership;
+        (company: $c, member: $t) isa company-membership;
         $c has name $c-name;
-        $pc isa parent-company;
+        $pc isa parent-company-name;
         $c-name = $pc;
     } then {
         $t has $pc;
