@@ -2,8 +2,8 @@ match
   $pe ($x, $y) isa permission;
   $x isa person, has full-name $x-n;
   $x-n contains "Kevin";
-  $y (accessed-object: $o, valid-action: $act) isa access;
-  $act has action-name $act-n;
+  $y (object: $o, action: $act) isa access;
+  $act has name $act-n;
   $o has path $o-fp;
 get $x-n, $act-n, $o-fp;
 

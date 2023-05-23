@@ -1,6 +1,6 @@
 match
     $p isa person, has full-name "Kevin Morrison";
     $o isa object, has path $o-path;
-    $ac(accessed-object: $o) isa access;
-    $pe(permitted-subject: $p, permitted-access: $ac) isa permission;
+    $ac(object: $o) isa access;
+    $pe(subject: $p, access: $ac) isa permission;
 
